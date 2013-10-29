@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     #@user = User.new(name: user_params[:name], email: user_params[:email], password: user_params[:password])
     @user = User.new(params[:user])
     @user.save
+    @found_user = User.last
     render :show
 
   end
-
   # private
   #   def user_params
   #     params.require(:user).permit(:name, :email, :password)
